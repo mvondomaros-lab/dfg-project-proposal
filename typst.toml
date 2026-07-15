@@ -1,0 +1,17 @@
+[package]
+name = "dfg-project-proposal"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Michael von Domaros <mvondomaros@uni-marburg.de>"]
+license = "MIT"
+description = "Unofficial template for the DFG project proposal (Vordruck 53.01, form version 09/25)."
+repository = "https://github.com/mvondomaros-lab/dfg-project-proposal"
+keywords = ["dfg", "grant", "project-proposal", "academic"]
+compiler = "0.13.0"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+
+[tool.dfg-project-proposal]
+form-version = "09/25"
