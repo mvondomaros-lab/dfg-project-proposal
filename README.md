@@ -45,27 +45,27 @@ This package isn't published to the Typst registry — install it into Typst's `
 
 ```sh
 git clone https://github.com/mvondomaros-lab/dfg-project-proposal.git \
-  "${XDG_DATA_HOME:-$HOME/.local/share}/typst/packages/local/dfg-project-proposal/0.1.0"
+  "${XDG_DATA_HOME:-$HOME/.local/share}/typst/packages/local/dfg-project-proposal/0.2.0"
 ```
 
 **macOS**
 
 ```sh
 git clone https://github.com/mvondomaros-lab/dfg-project-proposal.git \
-  "$HOME/Library/Application Support/typst/packages/local/dfg-project-proposal/0.1.0"
+  "$HOME/Library/Application Support/typst/packages/local/dfg-project-proposal/0.2.0"
 ```
 
 **Windows** (PowerShell)
 
 ```powershell
 git clone https://github.com/mvondomaros-lab/dfg-project-proposal.git `
-  "$env:APPDATA\typst\packages\local\dfg-project-proposal\0.1.0"
+  "$env:APPDATA\typst\packages\local\dfg-project-proposal\0.2.0"
 ```
 
 Then start a new document from the template:
 
 ```
-typst init @local/dfg-project-proposal:0.1.0
+typst init @local/dfg-project-proposal:0.2.0
 ```
 
 To update later, `git pull` inside that directory.
