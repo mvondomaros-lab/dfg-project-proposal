@@ -13,7 +13,7 @@
 
 == State of the art and preliminary work
 
-Some *bold*, _italic_, `raw`, and #emphasize("emphasized") text. #lorem(50) #cite("doe2019")
+Some *bold*, _italic_, `raw`, and #emphasize("emphasized") text. #lorem(120) #cite("doe2019")
 
 - A bullet list item
 - Another item

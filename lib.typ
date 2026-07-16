@@ -53,6 +53,11 @@
       list-end-delim-many: "; ",
       format-quotes: it => it,
       bibstring: ("in": none, "pages": none, "page": none),
+      format-fields: (
+        doi: (default, value, reference, field, options, style) => [
+          DOI:~#link("https://doi.org/" + value, value)
+        ],
+      ),
       highlight: (rendered-reference, reference, index) => {
         if is-highlighted(reference) {
           emphasize(rendered-reference)
@@ -107,8 +112,9 @@
 /// - bibliography-style (dictionary): A pergamon style, e.g. `acs-style`
 ///   (the default), `alphabetic-style()`, or `authoryear-style()`.
 #let project-title(applicants: (), title: [], bibliography-style: acs-style, body) = {
-  set text(font: "Arial", size: 11pt)
+  set text(font: "Helvetica", size: 11pt, lang: "en", hyphenate: true)
   set heading(numbering: "1.1.1.1")
+  set par(justify: true)
   show heading: set text(size: 11pt)
   show heading: set block(above: 1.5em, below: 1.5em)
 
