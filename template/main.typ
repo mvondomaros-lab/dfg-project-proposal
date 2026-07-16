@@ -1,4 +1,6 @@
-#import "@local/dfg-project-proposal:0.1.0": *
+#import "@local/dfg-project-proposal:0.2.0": *
+
+#show: general-settings
 
 #add-bib-resource(read("references.bib"))
 

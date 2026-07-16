@@ -1,6 +1,6 @@
 [package]
 name = "dfg-project-proposal"
-version = "0.1.0"
+version = "0.2.0"
 entrypoint = "lib.typ"
 authors = ["Michael von Domaros <mvondomaros@uni-marburg.de>"]
 license = "MIT-0"

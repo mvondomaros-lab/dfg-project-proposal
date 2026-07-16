@@ -104,14 +104,13 @@
   )
 }
 
-/// Sets up part 1 of a DFG project proposal (form 53.01) and the title
-/// block. Apply with `#show: project-title.with(applicants: (...), title:
-/// [...])`, then write sections 1-3 directly.
-///
-/// - applicants (array): One entry per applicant, e.g. `([First Last, City],)`.
-/// - bibliography-style (dictionary): A pergamon style, e.g. `acs-style`
-///   (the default), `alphabetic-style()`, or `authoryear-style()`.
-#let project-title(applicants: (), title: [], bibliography-style: acs-style, body) = {
+/// Sets up general document settings for a DFG project proposal (form
+/// 53.01): fonts, headings, paragraph justification, and page layout. Apply
+/// with `#show: general-settings`, before `#show:
+/// project-title.with(...)`. Override any of these settings (e.g. `lang`
+/// for a non-English title/body) by placing your own `set` rule between
+/// the two show rules.
+#let general-settings(body) = {
   set text(font: "Helvetica", size: 11pt, lang: "en", hyphenate: true)
   set heading(numbering: "1.1.1.1")
   set par(justify: true)
@@ -124,6 +123,18 @@
     header: form-header(17),
   )
 
+  body
+}
+
+/// Prints part 1's title block of a DFG project proposal (form 53.01).
+/// Apply with `#show: general-settings`, then `#show:
+/// project-title.with(applicants: (...), title: [...])`, then write
+/// sections 1-3 directly.
+///
+/// - applicants (array): One entry per applicant, e.g. `([First Last, City],)`.
+/// - bibliography-style (dictionary): A pergamon style, e.g. `acs-style`
+///   (the default), `alphabetic-style()`, or `authoryear-style()`.
+#let project-title(applicants: (), title: [], bibliography-style: acs-style, body) = {
   heading(numbering: none, outlined: false)[Project Description -- Project Proposals]
   heading(numbering: none, outlined: false)[#applicants.join(linebreak())]
   heading(numbering: none, outlined: false)[#title]
@@ -135,8 +146,8 @@
 
 /// Starts part 2: page break, page numbering reset, new header. Apply with
 /// `#show: start-supplementary-information` right before section 4. Paper
-/// size and margin carry over from `project-title`'s `set page` -- only the
-/// header (page-limit count) changes here.
+/// size and margin carry over from `general-settings`'s `set page` -- only
+/// the header (page-limit count) changes here.
 #let start-supplementary-information(body) = {
   counter(page).update(0)
   pagebreak()
