@@ -4,6 +4,8 @@ A Typst template for DFG project proposals, implementing form 53.01 (Project Des
 
 This template is **not officially endorsed by the DFG**.
 
+![Preview](thumbnail.png)
+
 ## Features
 
 - Reproduces the official two-part structure: sections 1-3 ("Project Description", max. 17 pages) and sections 4 onward ("Supplementary information", max. 8 pages), each with its own page numbering and page-limit header.
@@ -37,28 +39,39 @@ usable anywhere in the project description, not just for publications.
 
 ## Usage
 
-Start a new document from the template:
+This package isn't published to the Typst registry — install it into Typst's `local` package namespace instead. Clone this repository into the version-numbered directory Typst expects for local packages (see the [Typst docs](https://github.com/typst/packages#local-packages) for the full rules):
 
-```
-typst init @preview/dfg-project-proposal:0.1.0
-```
+**Linux**
 
-Then import the package directly:
-
-```typ
-#import "@preview/dfg-project-proposal:0.1.0": *
+```sh
+git clone https://github.com/mvondomaros-lab/dfg-project-proposal.git \
+  "${XDG_DATA_HOME:-$HOME/.local/share}/typst/packages/local/dfg-project-proposal/0.1.0"
 ```
 
-## Development
+**macOS**
 
-To test changes to this package locally before publishing, symlink this directory into Typst's `preview` package namespace (macOS path shown; see the [Typst docs](https://github.com/typst/packages#local-packages) for other platforms) under the version being tested:
+```sh
+git clone https://github.com/mvondomaros-lab/dfg-project-proposal.git \
+  "$HOME/Library/Application Support/typst/packages/local/dfg-project-proposal/0.1.0"
+```
+
+**Windows** (PowerShell)
+
+```powershell
+git clone https://github.com/mvondomaros-lab/dfg-project-proposal.git `
+  "$env:APPDATA\typst\packages\local\dfg-project-proposal\0.1.0"
+```
+
+Then start a new document from the template:
 
 ```
-ln -s "$(pwd)" "$HOME/Library/Application Support/typst/packages/preview/dfg-project-proposal/0.1.0"
+typst init @local/dfg-project-proposal:0.1.0
 ```
 
-This mirrors how the package will resolve once published, so `typst init @preview/dfg-project-proposal:0.1.0` and `#import "@preview/dfg-project-proposal:0.1.0": *` both work locally without changes to the template or manifest.
+To update later, `git pull` inside that directory.
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+MIT No Attribution (MIT-0), see [LICENSE](LICENSE) — so that a project
+proposal you write from this template isn't itself subject to an
+attribution requirement.

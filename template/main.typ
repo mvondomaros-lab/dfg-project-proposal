@@ -1,4 +1,4 @@
-#import "@preview/dfg-project-proposal:0.1.0": *
+#import "@local/dfg-project-proposal:0.1.0": *
 
 #add-bib-resource(read("references.bib"))
 
