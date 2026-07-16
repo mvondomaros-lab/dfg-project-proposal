@@ -4,14 +4,17 @@ version = "0.1.0"
 entrypoint = "lib.typ"
 authors = ["Michael von Domaros <mvondomaros@uni-marburg.de>"]
 license = "MIT"
-description = "Unofficial template for the DFG project proposal (Vordruck 53.01, form version 09/25)."
+description = "Unofficial DFG project proposal (Vordruck 53.01, form 09/25)."
 repository = "https://github.com/mvondomaros-lab/dfg-project-proposal"
-keywords = ["dfg", "grant", "project-proposal", "academic"]
+keywords = ["dfg", "grant", "project-proposal", "academic", "Deutsche Forschungsgemeinschaft"]
+categories = ["report"]
 compiler = "0.13.0"
+exclude = [".claude/", ".gitignore"]
 
 [template]
 path = "template"
 entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
 
 [tool.dfg-project-proposal]
 form-version = "09/25"

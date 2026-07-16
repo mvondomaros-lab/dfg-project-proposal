@@ -1,4 +1,4 @@
-#import "@local/dfg-project-proposal:0.1.0": *
+#import "@preview/dfg-project-proposal:0.1.0": *
 
 #add-bib-resource(read("references.bib"))
 
@@ -35,7 +35,7 @@ As shown in @fig-placeholder, figures are numbered and cross-referenced automati
 
 #lorem(50) #cite("roe2019", "doe2019", "smith2020")
 
-= Objectives and work program
+= Objectives and work programme
 
 == Anticipated total duration of the project
 
@@ -45,7 +45,7 @@ As shown in @fig-placeholder, figures are numbered and cross-referenced automati
 
 [Text]
 
-== Work program incl. proposed research methods
+== Work programme incl. proposed research methods
 // For each applicant
 
 [Text]

@@ -2,7 +2,7 @@
 
 A Typst template for DFG project proposals, implementing form 53.01 (Project Description – Project Proposal), version **09/25**.
 
-This template is **not officially endorsed by the DFG**. It uses American English and formatting.
+This template is **not officially endorsed by the DFG**.
 
 ## Features
 
@@ -37,21 +37,27 @@ usable anywhere in the project description, not just for publications.
 
 ## Usage
 
-This package is not yet published to Typst Universe, so it must be installed locally first — see [Development](#development). Once installed, start a new document from the template:
+Start a new document from the template:
 
 ```
-typst init @local/dfg-project-proposal
+typst init @preview/dfg-project-proposal:0.1.0
+```
+
+Then import the package directly:
+
+```typ
+#import "@preview/dfg-project-proposal:0.1.0": *
 ```
 
 ## Development
 
-To test the package locally, symlink this directory into Typst's local package namespace (macOS path shown; see the [Typst docs](https://github.com/typst/packages#local-packages) for other platforms):
+To test changes to this package locally before publishing, symlink this directory into Typst's `preview` package namespace (macOS path shown; see the [Typst docs](https://github.com/typst/packages#local-packages) for other platforms) under the version being tested:
 
 ```
-ln -s "$(pwd)" "$HOME/Library/Application Support/typst/packages/local/dfg-project-proposal/0.1.0"
+ln -s "$(pwd)" "$HOME/Library/Application Support/typst/packages/preview/dfg-project-proposal/0.1.0"
 ```
 
-Then `#import "@local/dfg-project-proposal:0.1.0": *` works from any document.
+This mirrors how the package will resolve once published, so `typst init @preview/dfg-project-proposal:0.1.0` and `#import "@preview/dfg-project-proposal:0.1.0": *` both work locally without changes to the template or manifest.
 
 ## License
 
